@@ -9,7 +9,6 @@ import { TickerBar } from './components/TickerBar';
 import { Projects } from './components/Projects';
 import { Certifications } from './components/Certifications';
 import { CertificateModal } from './components/CertificateModal';
-import { ExtraMile } from './components/ExtraMile';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
