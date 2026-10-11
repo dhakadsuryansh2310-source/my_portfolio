@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bubble-pink: #F294C8;
+    --mustard-yellow: #F2C230;
+    --bright-orange: #F27830;
+    --cream-bg: #FFFDF2;
+    --card-cream: #FFFEEA;
+    --dark-border: #121212;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bubble-pink);
+    color: #121212;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-bubble {
+    font-family: 'Fredoka', cursive;
+  }
+
+  .font-display {
+    font-family: 'Lilita One', cursive, sans-serif;
+  }
+
+  .font-mono-custom {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Comic / Neo-Brutalist utility classes */
+.border-comic {
+  border: 3.5px solid #121212;
+}
+
+.border-comic-thick {
+  border: 4.5px solid #121212;
+}
+
+.border-comic-sm {
+  border: 2.5px solid #121212;
+}
+
+.shadow-comic-sm {
+  box-shadow: 3px 3px 0px #121212;
+}
+
+.shadow-comic {
+  box-shadow: 5px 5px 0px #121212;
+}
+
+.shadow-comic-lg {
+  box-shadow: 7px 7px 0px #121212;
+}
+
+.shadow-comic-xl {
+  box-shadow: 10px 10px 0px #121212;
+}
+
+.shadow-comic-orange {
+  box-shadow: 6px 6px 0px #F27830;
+}
+
+.shadow-comic-pink {
+  box-shadow: 6px 6px 0px #F294C8;
+}
+
+.shadow-comic-yellow {
+  box-shadow: 6px 6px 0px #F2C230;
+}
+
+/* Exact comic bubble typography from mockup */
+.bubble-heading-white {
+  font-family: 'Fredoka', cursive;
+  color: #ffffff;
+  -webkit-text-stroke: 4px #121212;
+  paint-order: stroke fill;
+  text-shadow: 5px 5px 0px #121212;
+  line-height: 0.95;
+}
+
+.bubble-heading-dark {
+  font-family: 'Fredoka', cursive;
+  color: #121212;
+  line-height: 1.05;
+}
+
+/* Neo-Brutalist button interactions */
+.btn-comic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3.5px solid #121212;
+  box-shadow: 5px 5px 0px #121212;
+  font-family: 'Fredoka', cursive;
+  font-weight: 700;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn-comic:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #121212;
+}
+
+.btn-comic:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #121212;
+}
+
+/* Comic interactive card */
+.card-comic {
+  border: 3.5px solid #121212;
+  box-shadow: 6px 6px 0px #121212;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-comic:hover {
+  transform: translateY(-5px);
+  box-shadow: 9px 9px 0px #121212;
+}
+
+/* Ticker marquee animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Floating bobbing animation */
+@keyframes comicFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-comic-float {
+  animation: comicFloat 4s ease-in-out infinite;
+}
+
+@keyframes comicPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-comic-pulse {
+  animation: comicPulse 2s ease-in-out infinite;
+}
+
+/* Comic Halftone / Dot pattern background option */
+.bg-comic-dots {
+  background-image: radial-gradient(#121212 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+.bg-comic-dots-light {
+  background-image: radial-gradient(rgba(0,0,0,0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+/* Speech bubble pointy pseudo elements */
+.speech-bubble-bottom {
+  position: relative;
+}
+.speech-bubble-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 28px;
+  border-width: 14px 12px 0 0;
+  border-style: solid;
+  border-color: #121212 transparent transparent transparent;
+}
+
+/* Custom comic scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF0;
+  border-left: 3px solid #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #F27830;
+  border: 3px solid #121212;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F294C8;
+}
